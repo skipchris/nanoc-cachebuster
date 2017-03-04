@@ -18,7 +18,6 @@ module Nanoc
       def self.for(kind, items, item)
         klass = @subclasses[kind]
         raise Nanoc::Cachebuster::NoSuchStrategy.new "No strategy found for #{kind}" unless klass
-        debugger
         klass.new(items, item)
       end
 
