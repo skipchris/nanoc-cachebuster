@@ -5,7 +5,7 @@ module Nanoc
 
       def run(content, options = {})
         kind = options[:strategy] || (stylesheet? ? :css : :html)
-        strategy = Nanoc::Cachebuster::Strategy.for(kind , site, item)
+        strategy = Nanoc::Cachebuster::Strategy.for(kind , @items, item)
         content.gsub(strategy.class::REGEX) do |m|
           begin
             strategy.apply m, $1, $2, $3, $4
