@@ -135,7 +135,7 @@ module Nanoc
     # links, stylesheets, images and javascripts.
     class Html < Strategy
       REGEX = /
-        (href|src)        # Look for either an href="" or src="" attribute
+        (href|src|content)        # Look for either an href="" or src="" attribute
         =                 # ...followed by an =
         ("|'|)            # Then either a single, double or no quote at all
         (                 # Capture the entire reference
